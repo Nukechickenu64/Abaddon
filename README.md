@@ -1,3 +1,7 @@
+# Abbadon
+### A cobbled together hunk of junk made to emulate the playstyle of "theater of pain" servers without all the actual questionable morality, and to stay close to the classic SS13 feel, essentially trying to be best of both worlds.
+
+
 # Paradise
 [![CI](https://github.com/ParadiseSS13/Paradise/workflows/CI/badge.svg)](https://github.com/ParadiseSS13/Paradise/actions?query=workflow%3ACI)
 [![Render Nanomaps](https://github.com/ParadiseSS13/Paradise/workflows/Render%20Nanomaps/badge.svg)](https://github.com/ParadiseSS13/Paradise/actions?query=workflow%3A%22Render+Nanomaps%22)
