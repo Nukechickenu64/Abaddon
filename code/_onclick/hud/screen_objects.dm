@@ -536,3 +536,10 @@
 /obj/screen/component_button/Click(params)
 	if(parent)
 		parent.component_click(src, params)
+
+//abbadon shit
+/obj/screen/skill
+	icon_state = "stat_icon_template"
+	icon = 'icons/mob/screen_operative.dmi'
+	screen_loc = "EAST-2:28,CENTER+6:27"
+	name = "skill"

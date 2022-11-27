@@ -6,6 +6,8 @@
 	pressure_resistance = 15
 	max_integrity = 200
 	layer = BELOW_OBJ_LAYER
+	var/reqwisdom = 2
+	var/reqintelligence = 2
 	var/stat = 0
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
@@ -274,6 +276,10 @@
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(H.skills.intelligence < reqintelligence || H.skills.wisdom < reqwisdom)
+			to_chat(user, "<span class='warning'>You do not know how to use [src].</span>")
+			ui_close(H)
+			return TRUE
 		if(H.getBrainLoss() >= 60)
 			visible_message("<span class='warning'>[H] stares cluelessly at [src] and drools.</span>")
 			return TRUE

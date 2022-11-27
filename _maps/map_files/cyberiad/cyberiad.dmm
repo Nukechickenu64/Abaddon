@@ -19162,12 +19162,14 @@
 "aWD" = (
 /obj/structure/table/wood,
 /obj/item/ashtray/bronze,
+/obj/item/dumbell,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/dorms)
 "aWE" = (
 /obj/structure/table/wood,
 /obj/item/lighter/random,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
+/obj/item/dumbell,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/dorms)
 "aWF" = (
@@ -39973,6 +39975,7 @@
 	name = "north bump";
 	pixel_y = 24
 	},
+/obj/mecha/working/ripley/firefighter,
 /turf/simulated/floor/plasteel,
 /area/teleporter)
 "bTS" = (
@@ -46994,7 +46997,7 @@
 	dir = 8;
 	layer = 4;
 	pixel_y = 30
- 	},
+	},
 /turf/simulated/floor/plasteel,
 /area/engine/controlroom)
 "cmk" = (
@@ -61434,7 +61437,7 @@
 	dir = 8;
 	layer = 4;
 	pixel_y = 30
- 	},
+	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/plasteel,
 /area/engine/hardsuitstorage)
@@ -69040,6 +69043,10 @@
 	icon_state = "red"
 	},
 /area/security/prisonlockers)
+"egv" = (
+/obj/item/dumbell,
+/turf/simulated/floor/plasteel,
+/area/crew_quarters/dorms)
 "egI" = (
 /obj/structure/table,
 /obj/item/storage/box/monkeycubes{
@@ -73591,6 +73598,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/spawner/nukedisc_respawn,
+/obj/effect/spawner/lootdrop/maintenance/eight,
 /turf/simulated/floor/plating,
 /area/maintenance/aft)
 "hBr" = (
@@ -132755,7 +132763,7 @@ sHt
 sHt
 sHt
 aFK
-aPm
+egv
 aPm
 aSM
 aVv
@@ -133269,7 +133277,7 @@ sHt
 sHt
 sHt
 aOI
-aPm
+egv
 aPm
 aSM
 aVv

@@ -57,6 +57,7 @@
 	//maintcentral:			2  items,  2 spots 0 extra (08/08/2014)
 	//port:					5  items,  5 spots 0 extra (08/08/2014)
 	loot = list(
+				/obj/item/research/lootable = 20,
 				/obj/item/bodybag = 10,
 				/obj/item/clothing/glasses/meson = 20,
 				/obj/item/clothing/glasses/sunglasses = 10,
@@ -131,6 +132,8 @@
 				/obj/item/storage/bag/plasticbag = 20,
 				/obj/item/caution = 10,
 				////////////////CONTRABAND STUFF//////////////////
+				/obj/item/dice/d20/fate/one_use = 4,
+				/obj/item/dice/d20/fate = 1,
 				/obj/item/grenade/clown_grenade = 3,
 				/obj/item/grenade/smokebomb = 3,
 				/obj/item/seeds/ambrosia/cruciatus = 3,
@@ -157,6 +160,7 @@
 				/obj/item/storage/secure/briefcase/syndie = 2,
 				/obj/item/storage/fancy/cigarettes/cigpack_syndicate = 2,
 				/obj/item/storage/pill_bottle/fakedeath = 2,
+				/obj/item/multitool/uplink = 3,
 				"" = 60 // This should be a decently high number for chances where no loot will spawn
 				)
 

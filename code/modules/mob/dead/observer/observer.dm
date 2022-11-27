@@ -7,13 +7,13 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 /mob/dead/observer
 	name = "ghost"
-	desc = "It's a g-g-g-g-ghooooost!" //jinkies!
+	desc = "an opparition" //jinkies!
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost"
-	layer = GHOST_LAYER
+	layer = MOB_LAYER
 	plane = GAME_PLANE
 	stat = DEAD
-	density = FALSE
+	density = TRUE
 	alpha = 127
 	move_resist = INFINITY	//  don't get pushed around
 	invisibility = INVISIBILITY_OBSERVER
@@ -33,11 +33,13 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/ghost_orbit = GHOST_ORBIT_CIRCLE
 	var/health_scan = FALSE //does the ghost have health scanner mode on? by default it should be off
 	var/datum/orbit_menu/orbit_menu
+	var/datum/ghost_move_cooldown/Cmove = new /datum/ghost_move_cooldown
+
 
 /mob/dead/observer/New(mob/body=null, flags=1)
 	set_invisibility(GLOB.observer_default_invisibility)
 
-	sight |= SEE_TURFS | SEE_MOBS | SEE_OBJS | SEE_SELF
+	sight |= 0
 	see_invisible = SEE_INVISIBLE_OBSERVER_AI_EYE
 	see_in_dark = 100
 	verbs += list(
@@ -46,6 +48,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	// Our new boo spell.
 	AddSpell(new /obj/effect/proc_holder/spell/boo(null))
+	AddSpell(new /obj/effect/proc_holder/spell/unrest(null))
 
 	can_reenter_corpse = flags & GHOST_CAN_REENTER
 	started_as_observer = flags & GHOST_IS_OBSERVER
@@ -248,6 +251,20 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		if(P.control_computer)
 			P.despawn_occupant()
 	return
+/datum/ghost_move_cooldown
+	/// the world.time the spell will be available again
+	var/recharge_time = 0
+	/// the amount of time that must pass before a spell can be used again
+	var/recharge_duration = 3 // default spell cooldown
+	/// does it start off cooldown?
+	var/starts_off_cooldown = FALSE
+
+/datum/ghost_move_cooldown/proc/start_recharge()
+	var/recharge_increment = recharge_duration
+	recharge_time = world.time + recharge_increment
+
+/datum/ghost_move_cooldown/proc/is_on_cooldown()
+	return recharge_time > world.time
 
 // Ghosts have no momentum, being massless ectoplasm
 /mob/dead/observer/Process_Spacemove(movement_dir)
@@ -257,23 +274,15 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	update_parallax_contents()
 	setDir(direct)
 	ghostimage.setDir(dir)
-
 	var/oldloc = loc
-
 	if(NewLoc)
-		forceMove(NewLoc)
-	else
-		forceMove(get_turf(src))  //Get out of closets and such as a ghost
-		if((direct & NORTH) && y < world.maxy)
-			y++
-		else if((direct & SOUTH) && y > 1)
-			y--
-		if((direct & EAST) && x < world.maxx)
-			x++
-		else if((direct & WEST) && x > 1)
-			x--
-
+		var/turf/T = NewLoc
+		if(T.density == 0 & Cmove.is_on_cooldown() == 0)
+			forceMove(NewLoc)
+	if(Cmove.is_on_cooldown() == 0)
+		Cmove.start_recharge()
 	Moved(oldloc, direct)
+
 
 /mob/dead/observer/can_use_hands()	return 0
 

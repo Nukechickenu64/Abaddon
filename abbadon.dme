@@ -1,4 +1,4 @@
-// DM Environment file for paradise.dme.
+// DM Environment file for abbadon.dme.
 // All manual changes should be made outside the BEGIN_ and END_ blocks.
  // New source code should be placed in .dm files: choose File/New --> Code File.
 // BEGIN_INTERNALS
@@ -46,6 +46,7 @@
 #include "code\__DEFINES\error_handler.dm"
 #include "code\__DEFINES\flags.dm"
 #include "code\__DEFINES\footstep.dm"
+#include "code\__DEFINES\fov.dm"
 #include "code\__DEFINES\game.dm"
 #include "code\__DEFINES\gamemode.dm"
 #include "code\__DEFINES\genetics.dm"
@@ -1952,6 +1953,8 @@
 #include "code\modules\mob\living\carbon\human\body_accessories.dm"
 #include "code\modules\mob\living\carbon\human\death.dm"
 #include "code\modules\mob\living\carbon\human\examine.dm"
+#include "code\modules\mob\living\carbon\human\fieldofview.dm"
+#include "code\modules\mob\living\carbon\human\gurpslite.dm"
 #include "code\modules\mob\living\carbon\human\human.dm"
 #include "code\modules\mob\living\carbon\human\human_damage.dm"
 #include "code\modules\mob\living\carbon\human\human_defense.dm"
