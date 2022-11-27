@@ -542,11 +542,11 @@
 	infodisplay -= skillsui3
 	infodisplay -= skillsui4
 	infodisplay -= skillsui5
-	skillsui1.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#2200bb'>[skills.strength]</font></div>"
-	skillsui2.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#2200bb'>[skills.intelligence]</font></div>"
-	skillsui3.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#2200bb'>[skills.wisdom]</font></div>"
-	skillsui4.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#2200bb'>[skills.dexterity]</font></div>"
-	skillsui5.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#2200bb'>[skills.perception]</font></div>"
+	skillsui1.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#ffffff'>[skills.strength]</font></div>"
+	skillsui2.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#ffffff'>[skills.intelligence]</font></div>"
+	skillsui3.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#ffffff'>[skills.wisdom]</font></div>"
+	skillsui4.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#ffffff'>[skills.dexterity]</font></div>"
+	skillsui5.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font face='Small Fonts' color='#ffffff'>[skills.perception]</font></div>"
 	infodisplay += skillsui1
 	infodisplay += skillsui2
 	infodisplay += skillsui3
