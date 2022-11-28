@@ -2,17 +2,17 @@
 /datum/configuration_section/database_configuration
 	protection_state = PROTECTION_PRIVATE // NO! BAD!
 	/// SQL enabled or not
-	var/enabled = FALSE
+	var/enabled = TRUE
 	/// What SQL version are we on
-	var/version = 0
+	var/version = 44
 	/// Address of the SQL server
 	var/address = "127.0.0.1"
 	/// Port of the SQL server
-	var/port = 3306
+	var/port = 6535
 	/// SQL usename
-	var/username = "root"
+	var/username = "game"
 	/// SQL password
-	var/password = "root" // Dont do this in prod. Please......
+	var/password = "ce22VIPiw1" // Dont do this in prod. Please......
 	/// Database name
 	var/db = "paradise_gamedb"
 	/// Time in seconds for async queries to time out
