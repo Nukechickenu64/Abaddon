@@ -109,6 +109,7 @@
 /proc/adjustskill(var/mob/living/carbon/human/H, skill, amount)
 	var/datum/skills/skilldat = H.skills
 	var/datum/hud/human/hud =H.hud_used
+	var/datum/martial_art/the_sleeping_carp/carpperk = new
 	switch(skill)
 		if("strength")
 			skilldat.strength += amount
@@ -122,11 +123,14 @@
 			skilldat.perception += amount
 			var/obj/screen/fullscreen/noise/N = H.screens["noise"]
 			N.icon_state = addtext(num2text(9 - skilldat.perception), "j")
+	if (skilldat.wisdom > 14 & skilldat.strength > 14)
+		carpperk.teach(H)
 	hud.refreshskills()
 
 /proc/setskill(var/mob/living/carbon/human/H, skill, amount)
 	var/datum/skills/skilldat = H.skills
 	var/datum/hud/human/hud = H.hud_used
+	var/datum/martial_art/the_sleeping_carp/carpperk = new
 	switch(skill)
 		if("strength")
 			skilldat.strength = amount
@@ -140,6 +144,9 @@
 			skilldat.perception = amount
 			var/obj/screen/fullscreen/noise/N = H.screens["noise"]
 			N.icon_state = addtext(num2text(9 - skilldat.perception), "j")
+	if (skilldat.wisdom > 14 & skilldat.strength > 14)
+		carpperk.teach(H)
+
 	hud.refreshskills()
 
 /datum/skills
