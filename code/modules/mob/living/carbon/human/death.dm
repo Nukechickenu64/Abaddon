@@ -98,7 +98,7 @@
 	if(SSticker && SSticker.mode)
 		INVOKE_ASYNC(SSblackbox, /datum/controller/subsystem/blackbox/proc/ReportDeath, src)
 
-	if(blood_volume < 50)
+	if(blood_volume < 250)
 		if(prob(25))
 			to_chat(src,"you will reawaken soon, you feel it")
 			sleep(360)

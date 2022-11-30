@@ -32,12 +32,21 @@
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
 
 	var/can_be_admin_equipped = TRUE // Set to FALSE if your outfit requires runtime parameters
+	var/wisdom = 20
+	var/intelligence = 20
+	var/strength = 20
+	var/dexterity = 20
 
 /datum/outfit/naked
 	name = "Naked"
 
 /datum/outfit/proc/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	//to be overriden for customization depending on client prefs,species etc
+	setskill(H,"strength", roll_dice(20,FALSE,FALSE,1))
+	setskill(H,"intelligence", roll_dice(20,FALSE,FALSE,1))
+	setskill(H,"wisdom",roll_dice(20,FALSE,FALSE,1))
+	setskill(H,"dexterity",roll_dice(20,FALSE,FALSE,1))
+	setskill(H,"perception",roll_dice(10,FALSE,FALSE,1))
 	return
 
 // Used to equip an item to the mob. Mainly to prevent copypasta for collect_not_del.

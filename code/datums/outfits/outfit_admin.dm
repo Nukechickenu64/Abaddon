@@ -6,6 +6,11 @@
 	if(!visualsOnly && H.mind)
 		H.mind.assigned_role = name
 		H.job = name
+		setskill(H,"strength", roll_dice(10,FALSE,FALSE,1))
+		setskill(H,"intelligence", roll_dice(10,FALSE,FALSE,1))
+		setskill(H,"wisdom",roll_dice(10,FALSE,FALSE,1))
+		setskill(H,"dexterity",roll_dice(20,FALSE,FALSE,1))
+		setskill(H,"perception",roll_dice(10,FALSE,FALSE,1))
 
 
 /proc/apply_to_card(obj/item/card/id/I, mob/living/carbon/human/H, list/access = list(), rank, special_icon)
@@ -64,6 +69,11 @@
 	if(istype(R))
 		R.set_frequency(SYND_FREQ)
 	H.faction += "syndicate"
+	setskill(H,"strength", roll_dice(4,FALSE,FALSE,5))
+	setskill(H,"intelligence", roll_dice(10,FALSE,FALSE,1))
+	setskill(H,"wisdom",roll_dice(10,FALSE,FALSE,1))
+	setskill(H,"dexterity",roll_dice(10,FALSE,FALSE,2))
+	setskill(H,"perception",roll_dice(10,FALSE,FALSE,1))
 
 /datum/outfit/admin/syndicate_infiltrator
 	name = "Syndicate Infiltrator"
