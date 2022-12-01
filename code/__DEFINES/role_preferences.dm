@@ -12,6 +12,7 @@
 #define ROLE_TRAITOR			"traitor"
 #define ROLE_OPERATIVE			"operative"
 #define ROLE_CHANGELING			"changeling"
+#define ROLE_GHOUL				"ghoul aspirant"
 #define ROLE_WIZARD				"wizard"
 #define ROLE_REV				"revolutionary"
 #define ROLE_ALIEN				"xenomorph"

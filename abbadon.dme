@@ -1300,6 +1300,8 @@
 #include "code\modules\antagonists\changeling\powers\swap_form.dm"
 #include "code\modules\antagonists\changeling\powers\tiny_prick.dm"
 #include "code\modules\antagonists\changeling\powers\transform.dm"
+#include "code\modules\antagonists\ghoul_cultist\ghoul.dm"
+#include "code\modules\antagonists\ghoul_cultist\ghoul_spells.dm"
 #include "code\modules\antagonists\survivalist\survivalist.dm"
 #include "code\modules\antagonists\traitor\datum_mindslave.dm"
 #include "code\modules\antagonists\traitor\datum_traitor.dm"
