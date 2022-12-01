@@ -127,6 +127,7 @@
 	l_pocket = /obj/item/toy/crayon/white
 	r_pocket = /obj/item/lighter/zippo
 	pda = /obj/item/pda/detective
+	belt = /obj/item/gun/projectile/revolver/mateba
 	backpack_contents = list(
 		/obj/item/storage/box/evidence = 1,
 		/obj/item/detective_scanner = 1,
