@@ -17,6 +17,7 @@
 #define GAMEMODE_IS_REVOLUTION	(SSticker && istype(SSticker.mode, /datum/game_mode/revolution))
 #define GAMEMODE_IS_WIZARD		(SSticker && istype(SSticker.mode, /datum/game_mode/wizard))
 #define GAMEMODE_IS_RAGIN_MAGES (SSticker && istype(SSticker.mode, /datum/game_mode/wizard/raginmages))
+#define GAMEMODE_IS_GHOUL (SSticker && istype(SSticker.mode, /datum/game_mode/ghoul))
 
 //special roles
 // Distinct from the ROLE_X defines because some antags have multiple special roles but only one ban type
@@ -25,7 +26,7 @@
 #define SPECIAL_ROLE_BLOB "Blob"
 #define SPECIAL_ROLE_BLOB_OVERMIND "Blob Overmind"
 #define SPECIAL_ROLE_CHANGELING "Changeling"
-#define SPECIAL_ROLE_CHANGELING "Ghoul Aspirant"
+#define SPECIAL_ROLE_GHOUL "Ghoul Aspirant"
 #define SPECIAL_ROLE_CULTIST "Cultist"
 #define SPECIAL_ROLE_DEATHSQUAD "Deathsquad Commando"
 #define SPECIAL_ROLE_ERT "Response Team"

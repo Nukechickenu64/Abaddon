@@ -13,6 +13,18 @@
 	var/forge = 0
 	var/knock = 0
 	var/histories = 0
+	var/edge = 0
+	var/mainaspect
 
 /datum/antagonist/ghoul/New()
 	..()
+	var/obj/effect/proc_holder/spell/ghoul/work/W
+	var/obj/effect/proc_holder/spell/ghoul/dream/D
+	var/obj/effect/proc_holder/spell/ghoul/study/S
+	owner.AddSpell(W)
+	owner.AddSpell(D)
+	owner.AddSpell(S)
+
+/datum/mind/proc/make_ghoul()
+	if(!has_antag_datum(/datum/antagonist/ghoul))
+		add_antag_datum(/datum/antagonist/ghoul)

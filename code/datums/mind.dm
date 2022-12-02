@@ -283,6 +283,15 @@
 
 	. += _memory_edit_role_enabled(ROLE_CULTIST)
 
+/datum/mind/proc/memory_edit_ghoul(mob/living/carbon/human/H)
+	. = _memory_edit_header("ghoul")
+	if(src in SSticker.mode.ghoul_cult)
+		. += "<a href='?src=[UID()];ghoul=clear'>no</a>|<b><font color='red'>GHOUL</font></b>"
+	else
+		. += "<b>NO</b>|<a href='?src=[UID()];ghoul=ghoul'>ghoul</a>"
+
+	. += _memory_edit_role_enabled(ROLE_CULTIST)
+
 /datum/mind/proc/memory_edit_wizard(mob/living/carbon/human/H)
 	. = _memory_edit_header("wizard")
 	if(src in SSticker.mode.wizards)
@@ -474,10 +483,12 @@
 		"changeling",
 		"vampire", // "traitorvamp",
 		"nuclear",
-		"traitor", // "traitorchan",
+		"traitor",
+		"ghoul", // "traitorchan",
 	)
 	var/mob/living/carbon/human/H = current
 	if(ishuman(current))
+		sections["ghoul"] = memory_edit_ghoul(H)
 		/** Impanted**/
 		sections["implant"] = memory_edit_implant(H)
 		/** REVOLUTION ***/
@@ -934,6 +945,18 @@
 				if(!SSticker.mode.cult_give_item(/obj/item/stack/sheet/runed_metal/ten, H))
 					to_chat(usr, "<span class='warning'>Spawning runed metal failed!</span>")
 				log_and_message_admins("[key_name(usr)] has equipped [key_name(current)] with 10 runed metal sheets")
+	else if(href_list["ghoul"])
+		switch(href_list["ghoul"])
+			if("clear")
+				if(src in SSticker.mode)
+					SSticker.mode.remove_ghoul(src)
+					special_role = null
+					log_admin("[key_name(usr)] has de-ghouled [key_name(current)]")
+					message_admins("[key_name_admin(usr)] has de-ghouled [key_name_admin(current)]")
+			if("ghoul")
+				if(!(src in SSticker.mode))
+					SSticker.mode.add_ghoul(src)
+					log_and_message_admins("[key_name(usr)] has culted [key_name(current)]")
 
 	else if(href_list["wizard"])
 

@@ -660,6 +660,8 @@ GLOBAL_VAR_INIT(nologevent, 0)
 		antag_list += "Traitor"
 	if(M.mind.has_antag_datum(/datum/antagonist/mindslave, FALSE))
 		antag_list += "Mindslave"
+	if(M.mind.has_antag_datum(/datum/antagonist/ghoul))
+		antag_list += "Ghoul"
 	if(isrobot(M))
 		var/mob/living/silicon/robot/R = M
 		if(R.emagged)
