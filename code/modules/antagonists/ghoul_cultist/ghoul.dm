@@ -16,11 +16,12 @@
 	var/edge = 0
 	var/mainaspect
 
-/datum/antagonist/ghoul/New()
-	..()
-	var/obj/effect/proc_holder/spell/ghoul/work/W
-	var/obj/effect/proc_holder/spell/ghoul/dream/D
-	var/obj/effect/proc_holder/spell/ghoul/study/S
+/datum/antagonist/ghoul/on_gain()
+	. = ..()
+	to_chat(owner,"you realise you are the raven")
+	var/obj/effect/proc_holder/spell/ghoul/work/W = new
+	var/obj/effect/proc_holder/spell/ghoul/dream/D = new
+	var/obj/effect/proc_holder/spell/ghoul/study/S = new
 	owner.AddSpell(W)
 	owner.AddSpell(D)
 	owner.AddSpell(S)
