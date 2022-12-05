@@ -17,14 +17,15 @@
 
 /datum/antagonist/ghoul/apply_innate_effects(mob/living/mob_override)//I hate coding
 	. = ..()
+	var/mob/living/L = ..()
 	var/mob/living/carbon/human/H = mob_override
-	to_chat(H,"you realise you are the raven")
+	to_chat(L,"you realise you are the raven")
 	var/obj/effect/proc_holder/spell/ghoul/work/W = new /obj/effect/proc_holder/spell/ghoul/work
 	var/obj/effect/proc_holder/spell/ghoul/dream/D = new /obj/effect/proc_holder/spell/ghoul/dream
 	var/obj/effect/proc_holder/spell/ghoul/study/S = new /obj/effect/proc_holder/spell/ghoul/study
-	H.mind.AddSpell(W)
-	H.mind.AddSpell(D)
-	H.mind.AddSpell(S)
+	L.mind.AddSpell(W)
+	L.mind.AddSpell(D)
+	L.mind.AddSpell(S)
 
 /datum/mind/proc/make_ghoul()
 	if(!has_antag_datum(/datum/antagonist/ghoul))
