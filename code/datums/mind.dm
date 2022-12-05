@@ -288,7 +288,7 @@
 	if(src in SSticker.mode.ghoul_cult)
 		. += "<b>YES</b>|<a href='?src=[UID()];ghoul=clear'>no</a>"
 	else
-		. += "<a href='?src=[UID()];ghoul=ghoul'>Ghoul Aspirant</a>|<b>NO</b>"
+		. += "<a href='?src=[UID()];ghoul=ghoul'>ghoul aspirant</a>|<b>NO</b>"
 
 	. += _memory_edit_role_enabled(ROLE_GHOUL)
 
@@ -955,10 +955,12 @@
 					special_role = null
 					log_admin("[key_name(usr)] has de-ghouled [key_name(current)]")
 					message_admins("[key_name_admin(usr)] has de-ghouled [key_name_admin(current)]")
+					remove_antag_datum(/datum/antagonist/ghoul)
 			if("ghoul")
 				if(!(src in SSticker.mode))
 					SSticker.mode.add_ghoul(src)
 					log_and_message_admins("[key_name(usr)] has ghouled [key_name(current)]")
+					add_antag_datum(/datum/antagonist/ghoul)
 
 	else if(href_list["wizard"])
 
