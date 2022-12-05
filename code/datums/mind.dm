@@ -286,11 +286,11 @@
 /datum/mind/proc/memory_edit_ghoul(mob/living/carbon/human/H)
 	. = _memory_edit_header("ghoul")
 	if(src in SSticker.mode.ghoul_cult)
-		. += "<a href='?src=[UID()];ghoul=clear'>no</a>|<b><font color='red'>GHOUL</font></b>"
+		. += "<b>YES</b>|<a href='?src=[UID()];ghoul=clear'>no</a>"
 	else
-		. += "<b>NO</b>|<a href='?src=[UID()];ghoul=ghoul'>ghoul</a>"
+		. += "<a href='?src=[UID()];ghoul=ghoul'>Ghoul Aspirant</a>|<b>NO</b>"
 
-	. += _memory_edit_role_enabled(ROLE_CULTIST)
+	. += _memory_edit_role_enabled(ROLE_GHOUL)
 
 /datum/mind/proc/memory_edit_wizard(mob/living/carbon/human/H)
 	. = _memory_edit_header("wizard")
