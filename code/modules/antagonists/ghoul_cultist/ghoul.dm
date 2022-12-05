@@ -18,7 +18,6 @@
 /datum/antagonist/ghoul/apply_innate_effects(mob/living/mob_override)//I hate coding
 	. = ..()
 	var/mob/living/L = ..()
-	var/mob/living/carbon/human/H = mob_override
 	to_chat(L,"you realise you are the raven")
 	var/obj/effect/proc_holder/spell/ghoul/work/W = new /obj/effect/proc_holder/spell/ghoul/work
 	var/obj/effect/proc_holder/spell/ghoul/dream/D = new /obj/effect/proc_holder/spell/ghoul/dream
