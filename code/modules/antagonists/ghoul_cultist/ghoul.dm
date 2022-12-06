@@ -26,6 +26,13 @@
 	L.mind.AddSpell(D)
 	L.mind.AddSpell(S)
 
+/datum/antagonist/ghoul/remove_innate_effects(mob/living/mob_override)
+	. = ..()
+	var/mob/living/L = ..()
+	L.RemoveSpell(/obj/effect/proc_holder/spell/ghoul/study)
+	L.RemoveSpell(/obj/effect/proc_holder/spell/ghoul/work)
+	L.RemoveSpell(/obj/effect/proc_holder/spell/ghoul/dream)
+
 /datum/mind/proc/make_ghoul()
 	if(!has_antag_datum(/datum/antagonist/ghoul))
 		add_antag_datum(/datum/antagonist/ghoul)

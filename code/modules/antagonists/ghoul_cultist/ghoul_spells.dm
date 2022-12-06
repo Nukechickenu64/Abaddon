@@ -36,3 +36,24 @@
 	panel = "Spells"//What panel the proc holder needs to go on.
 	density = FALSE
 	opacity = FALSE
+
+/obj/effect/proc_holder/spell/ghoul/work/create_new_targeting()
+	. = ..()
+	return new /datum/spell_targeting/self
+
+/obj/effect/proc_holder/spell/ghoul/dream/create_new_targeting()
+	. = ..()
+	return new /datum/spell_targeting/self
+
+/obj/effect/proc_holder/spell/ghoul/study/create_new_targeting()
+	var/datum/spell_targeting/click/T = new()
+	T.range = 1
+	T.click_radius = -1
+	T.allowed_type = /obj/item
+	T.try_auto_target = FALSE
+	return T
+
+/obj/effect/proc_holder/spell/ghoul/work/cast(list/targets, mob/user)
+	. = ..()
+	var/datum/antagonist/ghoul/G = user.mind.antag_datums.Find(/datum/antagonist/ghoul)
+	to_chat(user,"you have [G.grail] grail")
