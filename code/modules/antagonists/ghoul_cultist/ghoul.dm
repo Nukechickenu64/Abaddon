@@ -15,6 +15,20 @@
 	var/edge = 0
 	var/mainaspect
 
+/datum/ghoulaspects
+	var/lore = 0
+	var/grail = 0
+	var/heart = 0
+	var/moth = 0
+	var/forge = 0
+	var/knock = 0
+	var/histories = 0
+	var/edge = 0
+	var/mainaspect
+
+/mob/living/carbon/human
+	var/datum/ghoulaspects/ghoulaspects = new
+
 /datum/antagonist/ghoul/apply_innate_effects(mob/living/mob_override)//I hate coding
 	. = ..()
 	var/mob/living/L = ..()

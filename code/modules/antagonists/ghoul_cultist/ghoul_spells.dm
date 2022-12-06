@@ -39,7 +39,12 @@
 
 /obj/effect/proc_holder/spell/ghoul/work/create_new_targeting()
 	. = ..()
-	return new /datum/spell_targeting/self
+	var/datum/spell_targeting/click/T = new()
+	T.range = 1
+	T.click_radius = -1
+	T.allowed_type = /obj/item
+	T.try_auto_target = FALSE
+	return T
 
 /obj/effect/proc_holder/spell/ghoul/dream/create_new_targeting()
 	. = ..()
@@ -55,5 +60,20 @@
 
 /obj/effect/proc_holder/spell/ghoul/work/cast(list/targets, mob/user)
 	. = ..()
-	var/datum/antagonist/ghoul/G = user.mind.antag_datums.Find(/datum/antagonist/ghoul)
+	var/mob/living/carbon/human/H = user
+	var/datum/ghoulaspects/G = H.ghoulaspects
+	to_chat(user,"you have [G.grail] grail")
+
+
+/obj/effect/proc_holder/spell/ghoul/dream/cast(list/targets, mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	var/datum/ghoulaspects/G = H.ghoulaspects
+	to_chat(user,"you have [G.grail] grail")
+
+
+/obj/effect/proc_holder/spell/ghoul/study/cast(list/targets, mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	var/datum/ghoulaspects/G = H.ghoulaspects
 	to_chat(user,"you have [G.grail] grail")
